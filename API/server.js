@@ -13,7 +13,6 @@ const web3 = new Web3("https://tiniest-quaint-mound.ethereum-sepolia.discover.qu
 const contractAddress = "0xbec24e5abd6daa586ceb4ec18bf4d94b6bc0bbcc";
 const contract = new web3.eth.Contract(ABI,contractAddress);
 
-
 const dateclashcheck = async(taskDate)=>{
     const tasks = await contract.methods.alltask().call();
     const foundtask = tasks.find(task=>task.date===taskDate);
